@@ -10,11 +10,21 @@ clc;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %speed of light = 3e8
+c = 3e8;
+% fc = 77e9;
+d_res = 1
+max_v = 100;
+
 %% User Defined Range and Velocity of target
 % *%TODO* :
 % define the target's initial position and velocity. Note : Velocity
 % remains contant
  
+% set the range
+range = 100;
+
+% set the velocity
+v = 10;
 
 
 %% FMCW Waveform Generation
@@ -24,6 +34,14 @@ clc;
 % Calculate the Bandwidth (B), Chirp Time (Tchirp) and Slope (slope) of the FMCW
 % chirp using the requirements above.
 
+% d_res = c / (2*Bsweep);
+B = c / (2*d_res);
+
+% sweep time (chirp time)
+Tchirp = 5.5 * R_max *2 / c;
+
+% Slope=Bandwidth/Tchirp
+slope = B / Tchirp
 
 %Operating carrier frequency of Radar 
 fc= 77e9;             %carrier freq
