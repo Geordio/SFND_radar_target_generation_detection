@@ -26,7 +26,7 @@ max_v = 100;
 range = 100;
 
 % set the velocity
-v = 10;
+v = 50;
 
 
 %% FMCW Waveform Generation
@@ -80,7 +80,7 @@ for i=1:length(t)
     % *%TODO* :
     %For each time stamp update the Range of the Target for constant velocity. 
     % delay time can be calculated from range and speed of light
-    r_t(i) = range * v*t(i);
+    r_t(i) = range + v*t(i);
     td(i) = 2*r_t(i)/c;
     
     % *%TODO* :
@@ -111,8 +111,8 @@ Mix = reshape(Mix, [Nr, Nd]);
 signal_fft = fft(Mix,Nr);
 
  % *%TODO* :
-% Take the absolute value of FFT output
-signal_fft = abs(signal_fft);
+% Take the absolute value of FFT output, after normalising
+signal_fft = abs(signal_fft/Nr);
 
  % *%TODO* :
 % Output of FFT is double sided signal, but we are interested in only one side of the spectrum.
