@@ -1,5 +1,13 @@
 ## SFND_radar_target_generation_detection
 
+### Initial setup
+
+I defined the target vehicle to have:
+
+Range: 100m
+velocity: 50m/s
+
+
 ### FMCW Waveform Design
 
 Output of calculation of Bandwidth (B), chirp time (Tchirp) and slope of the chirp:
@@ -39,7 +47,7 @@ end
 with the range of the target set to 100m, the result of the FFT is shown below.
 
 ![fft1](range_fft1.png)
-Note that the peak is at 101 rather than 100, but is within the +/-10m requirement.
+Note that the peak is at 101 rather than 100 taht I defined, but is within the +/-10m requirement.
 
 ### 2D CFAR
 
